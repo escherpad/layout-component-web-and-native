@@ -45,7 +45,7 @@ export default class FlexItem extends Component {
         if (fluid) flexStyle = flexFluid;
         if (fixed) flexStyle = flexFixed;
         return (
-            <Component {...props} width={width} height={height} style={{...flexStyle, ...style, width, height}}>
+            <Component {...props} width={width} height={height} style={{...flexStyle, ...style}}>
                 {children}
             </Component>
         );

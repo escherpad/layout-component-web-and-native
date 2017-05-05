@@ -6,7 +6,6 @@ export default class Flex extends Component {
     constructor(props) {
         super(props);
         this._props = props;
-        console.log(props);
     };
 
     render() {
@@ -22,31 +21,10 @@ export default class Flex extends Component {
         };
         if (align) thisStyle.alignItems = align;
         if (justify) thisStyle.justifyContent = justify;
-        console.log("this style")
-        console.log(thisStyle)
         return (
             <Component style={ {...thisStyle, ...style}} {...props}>
                 {children}
             </Component>);
     };
-};
-
-
-const {any, bool, string} = PropTypes;
-Flex.prototype.propTypes = {
-  /** an optional */
-  component: string,
-  row: any,
-  column: any,
-  fill: bool,
-  /** one of center, start, end */
-  align: string,
-  /** one of stretch, center, start, end */
-  justify: string,
-  style: any
-};
-
-Flex.prototype.defaultProps = {
-  component: "View"
 };
 
